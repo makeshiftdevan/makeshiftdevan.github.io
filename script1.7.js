@@ -195,7 +195,17 @@ topic: " Adding Vectors"
 }
 
 ]
-
+ function quizEnd() {
+        var e = document.querySelector("input");
+        document.getElementById("validation").addEventListener("submit", function(t) {
+            t.preventDefault();
+            "gru" === e.value ? enterInfo() : (modal.style.display = "block", span.onclick = function() {
+                modal.style.display = "none"
+            }, window.onclick = function(e) {
+                e.target == modal && (modal.style.display = "none")
+            })
+        })
+    }
         questionNumber = document.querySelector(".question-number"),
         questionText = document.querySelector(".question-text"),
         optionContainer = document.querySelector(".option-container"),
@@ -227,17 +237,7 @@ topic: " Adding Vectors"
         for (var e = 0; 5 != availableQuestions.length; e++) randomNum = Math.floor(Math.random() * quiz.length), availableQuestions.push(quiz[randomNum]), quiz.splice(randomNum, 1)
     }
     
-    function quizEnd() {
-        var e = document.querySelector("input");
-        document.getElementById("validation").addEventListener("submit", function(t) {
-            t.preventDefault();
-            "gru" === e.value ? enterInfo() : (modal.style.display = "block", span.onclick = function() {
-                modal.style.display = "none"
-            }, window.onclick = function(e) {
-                e.target == modal && (modal.style.display = "none")
-            })
-        })
-    }
+   
     
     function enterInfo() {
         homeBox.classList.remove("hide"), firstBox.classList.add("hide")
