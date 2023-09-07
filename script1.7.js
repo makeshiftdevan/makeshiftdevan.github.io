@@ -227,7 +227,7 @@ topic: " Adding Vectors"
         for (var e = 0; 5 != availableQuestions.length; e++) randomNum = Math.floor(Math.random() * quiz.length), availableQuestions.push(quiz[randomNum]), quiz.splice(randomNum, 1)
     }
     
-    function trialBegin() {
+    function quizEnd() {
         var e = document.querySelector("input");
         document.getElementById("validation").addEventListener("submit", function(t) {
             t.preventDefault();
