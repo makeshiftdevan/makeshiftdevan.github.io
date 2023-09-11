@@ -1,122 +1,7 @@
 
 	//question bank
 
-	const quiz = [{
-
-		q: "A rocket is launched from rest directly upward in such a way as to have a constant acceleration of 6 m/s/s.  How much time does it take for the rocket to reach a height of 75 meters?",
-        
-        //blank image for questions without images
-        imgURL: 'https://drive.google.com/uc?export=view&id=1fcIpZx-r5UqhKSZmdMP4NPhplvK9Gjku',
-		
-        options: ['3 s', '4 s', '5 s', '10 s', '25 s'],
-
-		answer: 2,
-
-		topic: " Displacement Equation"
-
-	}, {
-
-    q: "A rocket is launched from rest directly upward in such a way as to have a constant acceleration of 20 m/s/s.  How much time does it take for the rocket to reach a height of 1000 meters?",
-
-//blank image for questions without images
-imgURL: 'https://drive.google.com/uc?export=view&id=1fcIpZx-r5UqhKSZmdMP4NPhplvK9Gjku',
-
-options: ['3 s', '4 s', '5 s', '10 s', '25 s'],
-
-answer: 3,
-
-topic: " Displacement Equation"
-
-},{
-
-		q: "Suppose that vector A = 5 @ 53 degrees, and vector B = 10 @ 143 degrees.  In component form, what is A + B? (x,y)",
-        
-        //blank image for questions without images
-        imgURL: 'https://drive.google.com/uc?export=view&id=1fcIpZx-r5UqhKSZmdMP4NPhplvK9Gjku',
-		
-        options: ['(5, -10)', '(11, -2)', '(-5, 10)', '(-11, 2)', '(-11, -10)'],
-
-		answer: 2,
-
-		topic: " Vector Components"
-	}, 
-    {
-
-q: "Suppose that vector A = 10 @ -37 degrees and vector B = 5 @ 127 degrees.  In component form, what is A - B?",
-
-//blank image for questions without images
-imgURL: 'https://drive.google.com/uc?export=view&id=1fcIpZx-r5UqhKSZmdMP4NPhplvK9Gjku',
-
-options: ['(5, -2)', '(-5, 2)', '(-11, 10)', '(11, -10)', '(11, 10)'],
-
-answer: 3,
-
-topic: " Vector Components"
-},
-    {
-
-		q: "Which vectors have the same direction as -\'X\'?",
-        
-        imgURL: 'https://drive.google.com/uc?export=view&id=1EmfFvDvChytICTT9IAya8zkvg2Fb5-si',
-		
-        options: ['B,E,H', 'A, C', 'A, C, G ', 'A, G', 'D, F, G'],
-
-		answer: 1,
-
-		topic: " Vector Direction"
-
-	}, {
-
-        q: " ",
-
-        imgURL: 'https://drive.google.com/uc?export=view&id=1W0-tSNB2J9Vor8KLewZ_FCaGUWUcL9A2',
-
-        options: ['A>B>E=F>G>H>C>D', 'A>B>E=F>A>H>C>D', 'A>B>E>F>G>H>C>D', 'D>C>E=F>H>G>B>A', 'D>C>H>G>E=F>B>A'],
-
-        answer: 0,
-
-        topic: " Adding Vectors"
-
-},
-    {
-
-        q: "Which of the following vectors has an x-component equal to 0?",
-        
-        imgURL: 'https://drive.google.com/uc?export=view&id=1_n8wD8B1bKMQTmRCv42kaFmVtSaPSzL3',
-        
-        options: ['G', 'C', 'E', 'C and E', 'A'],
-
-        answer: 0,
-
-        topic: " Vector Components"
-
-}, {
-
-q: "Which of the following vectors has a y-component equal to 0?",
-
-imgURL: 'https://drive.google.com/uc?export=view&id=1_n8wD8B1bKMQTmRCv42kaFmVtSaPSzL3',
-
-options: ['G', 'C', 'E', 'C and E', 'A'],
-
-answer: 3,
-
-topic: " Vector Components"
-
-}, {
-
-q: "Which student is correct?",
-
-imgURL: 'https://drive.google.com/uc?export=view&id=1hV_GXJ86SKbHmz9fDQuOqZrJEcBn7Llp',
-
-options: ['All of them', 'None of them', 'Ayesha', 'Bashir', 'Claudio'],
-
-answer: 1,
-
-topic: " Adding Vectors"
-
-}
-
-	] 
+	const quiz=[{q:"A man on a motorcycle is initially at point A.  At time t = 0, the man travels along the path shown to point B.  The amount of time required to complete each segment of the path is also indicated in the diagram.  [Note:  The squares in the grid are 10 meters long.]  What distance does the man travel in going from point A to point B?",options:["15 meters","30 meters","60 meters","90 meters","120 meters"],answer:4,imgURL:"https://drive.google.com/uc?export=view&id=1OX4B-3GTzaMSCJpjVLO9HjENK3heUrPC",topic:"Distance vs. Displacement from a graph"},{q:"A man on a motorcycle is initially at point A.  At time t = 0, the man travels along the path shown to point B.  The amount of time required to complete each segment of the path is also indicated in the diagram.  [Note:  The squares in the grid are 10 meters long.] What is the magnitude of the man's displacement once he reaches point B?",options:["15 meters","30 meters","60 meters","90 meters","120 meters"],answer:2,imgURL:"https://drive.google.com/uc?export=view&id=1OX4B-3GTzaMSCJpjVLO9HjENK3heUrPC",topic:"Distance vs. Displacement from a graph"},{q:"A man on a motorcycle is initially at point A.  At time t = 0, the man travels along the path shown to point B.  The amount of time required to complete each segment of the path is also indicated in the diagram.  [Note:  The squares in the grid are 10 meters long.] What is the man's average speed as he travels from point A to point B?",options:["2 m/s","3 m/s","6 m/s","7 m/s","18 m/s"],answer:2,imgURL:"https://drive.google.com/uc?export=view&id=1OX4B-3GTzaMSCJpjVLO9HjENK3heUrPC",topic:"Average Speed vs Velocity"},{q:"A man on a motorcycle is initially at point A.  At time t = 0, the man travels along the path shown to point B.  The amount of time required to complete each segment of the path is also indicated in the diagram.  [Note:  The squares in the grid are 10 meters long.] What is the magnitude of the man's average velocity for this travel?",options:["2 m/s","3 m/s","6 m/s","7 m/s","18 m/s"],answer:1,imgURL:"https://drive.google.com/uc?export=view&id=1OX4B-3GTzaMSCJpjVLO9HjENK3heUrPC",topic:"Average Speed vs Velocity"},{q:"A man on a motorcycle is initially at point A.  At time t = 0, the man travels along the path shown to point B.  The amount of time required to complete each segment of the path is also indicated in the diagram.  [Note:  The squares in the grid are 10 meters long.] What is the man's instantaneous speed at time t = 19 seconds?",options:["3 m/s","5 m/s","6 m/s","8 m/s","10 m/s"],answer:4,imgURL:"https://drive.google.com/uc?export=view&id=1OX4B-3GTzaMSCJpjVLO9HjENK3heUrPC",topic:"Instantaneous Speed"},{q:"A man on a motorcycle is initially at point A.  At time t = 0, the man travels along the path shown to point B.  The amount of time required to complete each segment of the path is also indicated in the diagram.  [Note:  The squares in the grid are 10 meters long.] What is the man's instantaneous speed at time t = 6 seconds?",options:["3 m/s","5 m/s","6 m/s","8 m/s","10 m/s"],answer:1,imgURL:"https://drive.google.com/uc?export=view&id=1OX4B-3GTzaMSCJpjVLO9HjENK3heUrPC",topic:"Instantaneous Speed"},{q:"A man on a motorcycle is initially at point A.  At time t = 0, the man travels along the path shown to point B.  The amount of time required to complete each segment of the path is also indicated in the diagram.  [Note:  The squares in the grid are 10 meters long.]  What distance does the man travel in going from point A to point B and back to point A again?",options:["100 meters","22 meters","11 meters","280 meters","240 meters"],answer:4,imgURL:"https://drive.google.com/uc?export=view&id=1OX4B-3GTzaMSCJpjVLO9HjENK3heUrPC",topic:"Distance vs. Displacement from a graph"},{q:"A man on a motorcycle is initially at point A.  At time t = 0, the man travels along the path shown to point B.  The amount of time required to complete each segment of the path is also indicated in the diagram.  [Note:  The squares in the grid are 10 meters long.]  What displacement does the man travel in going from point A to point B and back to point A again?",options:["100 meters","22 meters","0 meters","280 meters","240 meters"],answer:2,imgURL:"https://drive.google.com/uc?export=view&id=1OX4B-3GTzaMSCJpjVLO9HjENK3heUrPC",topic:"Distance vs. Displacement from a graph"}]
 
 	const questionNumber = document.querySelector(".question-number");
 
@@ -204,7 +89,7 @@ topic: " Adding Vectors"
 
 			let valid = true;
 
-			if(fileNotFound.value === "tryAgain") {
+			if(fileNotFound.value === "1.1") {
 
 				enterInfo();
 
