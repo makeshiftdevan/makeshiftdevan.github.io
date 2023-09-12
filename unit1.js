@@ -157,6 +157,8 @@ var modal = document.getElementById("myModal"),
     spanOne = document.getElementsByClassName("close")[1],
     modalOne = document.getElementById("remindModal"),
     btn1 = document.getElementById("start");
+    rightModal = document.getElementById("rightModal");
+    wrongModal = document.getElementById("wrongModal");
 let currentQuestion, questionCounter = 0,
     availableQuestions = [],
     availableOptions = [],
@@ -192,6 +194,16 @@ function reminder() {
     }
 }
 
+function rightModal() {
+    rightModal.style.display = "block", spanOne.onclick = function() {
+        rightModal.style.display = "none",
+    }
+}
+function wrongModal() {
+    wrongModal.style.display = "block", spanOne.onclick = function() {
+        wrongModal.style.display = "none",
+    }
+}
 function startQuiz() {
     homeBox.classList.add("hide"), quizBox.classList.remove("hide")
 }
@@ -219,20 +231,21 @@ let userResponses = [];
             userResponses[questionIndex] = isCorrect ? "correct" : "wrong";
         }
 
-        // Modify the getResult function to update the response and display "correct" or "wrong"
         function getResult(element) {
-            const id = parseInt(element.id);
-            if (id === currentQuestion.answer) {
-                element.classList.add("correct");
-                element.classList.remove("wrong");
-                correctAnswers++;
-                updateResponse(questionCounter - 1, true); // Update the user's response
-            } else {
-                element.classList.add("wrong");
-                element.classList.remove("correct");
-                topicList.push(currentQuestion.topic);
-                updateResponse(questionCounter - 1, false); // Update the user's response
-            }
+    const id = parseInt(element.id);
+    if (id === currentQuestion.answer) {
+        element.classList.add("correct");
+        element.classList.remove("wrong");
+        correctAnswers++;
+        updateResponse(questionCounter - 1, true); // Update the user's response
+        rightModalElement.style.display = "block"; // Show the right modal
+    } else {
+        element.classList.add("wrong");
+        element.classList.remove("correct");
+        topicList.push(currentQuestion.topic);
+        updateResponse(questionCounter - 1, false); // Update the user's response
+        wrongModalElement.style.display = "block"; // Show the wrong modal
+    }
 
             attempt++;
             //unclickableOptions();
@@ -243,7 +256,7 @@ function changeMind() {
         e.classList.remove("correct", "wrong")
     }), document.getElementById("changeMindButton").disabled = !0
 }
-function checkAnswer() {
+/*function checkAnswer() {
     const options = optionContainer.children;
     const selectedOption = Array.from(options).find(option => option.classList.contains("already-answered"));
     
@@ -254,7 +267,7 @@ function checkAnswer() {
 
     getResult(selectedOption);
 }
-
+*/
 function next() {
     null !== selectedOption ? (selectedOption = null, questionCounter === availableQuestions.length ? (console.log("Exit Ticket Completed"), quizOver()) : getNewQuestion()) : alert("Please select an answer before moving to the next question.")
 }
