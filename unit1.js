@@ -238,13 +238,13 @@ let userResponses = [];
         element.classList.remove("wrong");
         correctAnswers++;
         updateResponse(questionCounter - 1, true); // Update the user's response
-        rightModalElement.style.display = "block"; // Show the right modal
+        rightModal.style.display = "block"; // Show the right modal
     } else {
         element.classList.add("wrong");
         element.classList.remove("correct");
         topicList.push(currentQuestion.topic);
         updateResponse(questionCounter - 1, false); // Update the user's response
-        wrongModalElement.style.display = "block"; // Show the wrong modal
+        wrongModal.style.display = "block"; // Show the wrong modal
     }
 
             attempt++;
