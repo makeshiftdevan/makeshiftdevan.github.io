@@ -235,7 +235,7 @@ let userResponses = [];
             }
 
             attempt++;
-            unclickableOptions();
+            //unclickableOptions();
         }
 
 function changeMind() {
