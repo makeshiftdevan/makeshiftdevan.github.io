@@ -1,4 +1,16 @@
+function quizEnd() {
+    var e = document.querySelector("input");
+    document.getElementById("validation").addEventListener("submit", function(t) {
+        t.preventDefault(), "password" === e.value ? enterInfo() : (modal.style.display = "block", span.onclick = function() {
+            modal.style.display = "none"
+        }, window.onclick = function(e) {
+            e.target == modal && (modal.style.display = "none")
+        })
+    })
+}
+
 document.addEventListener("contextmenu", e => e.preventDefault());
+
 const quiz = [{
     q: "When a ball is thrown horizontally from a certain height, how does its horizontal velocity change as it moves through the air?",
     imgURL: "https://drive.google.com/uc?export=view&id=1fcIpZx-r5UqhKSZmdMP4NPhplvK9Gjku",
@@ -173,16 +185,7 @@ function setAvailableQuestions() {
     for (var e = 0; 5 != availableQuestions.length; e++) randomNum = Math.floor(Math.random() * quiz.length), availableQuestions.push(quiz[randomNum]), quiz.splice(randomNum, 1)
 }
 
-function quizEnd() {
-    var e = document.querySelector("input");
-    document.getElementById("validation").addEventListener("submit", function(t) {
-        t.preventDefault(), "password" === e.value ? enterInfo() : (modal.style.display = "block", span.onclick = function() {
-            modal.style.display = "none"
-        }, window.onclick = function(e) {
-            e.target == modal && (modal.style.display = "none")
-        })
-    })
-}
+
 
 function enterInfo() {
     homeBox.classList.remove("hide"), firstBox.classList.add("hide")
