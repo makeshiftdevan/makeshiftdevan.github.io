@@ -243,6 +243,17 @@ function changeMind() {
         e.classList.remove("correct", "wrong")
     }), document.getElementById("changeMindButton").disabled = !0
 }
+function checkAnswer() {
+    const options = optionContainer.children;
+    const selectedOption = Array.from(options).find(option => option.classList.contains("already-answered"));
+    
+    if (!selectedOption) {
+        alert("Please select an option first.");
+        return;
+    }
+
+    getResult(selectedOption);
+}
 
 function next() {
     null !== selectedOption ? (selectedOption = null, questionCounter === availableQuestions.length ? (console.log("Exit Ticket Completed"), quizOver()) : getNewQuestion()) : alert("Please select an answer before moving to the next question.")
