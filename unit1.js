@@ -212,59 +212,31 @@ function getNewQuestion() {
         i.innerHTML = currentQuestion.options[e], i.id = e, i.style.animationDelay = o + "s", o += .2, i.className = "option", optionContainer.appendChild(i), i.setAttribute("onclick", "getResult(this)")
     }
 }
-let selectedOption = null;
+let userResponses = [];
 
-function getResult(element) {
-    const id = parseInt(element.id);
-    const options = optionContainer.children;
-
-    // Loop through all options to remove existing highlighting
-    for (let i = 0; i < options.length; i++) {
-        options[i].classList.remove("correct", "wrong");
-    }
-
-    if (id === currentQuestion.answer) {
-        // Set the color to the correct option (green)
-        element.classList.add("correct");
-    } else {
-        // Set the color to the wrong option (red)
-        element.classList.add("wrong");
-    }
-
-    attempt++;
-    unclickableOptions();
-}
-
-function checkAnswer() {
-    const options = optionContainer.children;
-    const selectedOption = Array.from(options).find(option => option.classList.contains("already-answered"));
-    
-    if (!selectedOption) {
-        alert("Please select an option first.");
-        return;
-    }
-
-    getResult(selectedOption);
-}
-Now, when you click the "Check Answer" button, it will check the selected option and highlight it as correct or wrong based on the correctness of the answer.
-
-
-
-
-
-
-
-    function checkAnswer() {
-        const options = optionContainer.children;
-        const selectedOption = Array.from(options).find(option => option.classList.contains("already-answered"));
-        
-        if (!selectedOption) {
-            alert("Please select an option first.");
-            return;
+        // Add this function to update the user's response
+        function updateResponse(questionIndex, isCorrect) {
+            userResponses[questionIndex] = isCorrect ? "correct" : "wrong";
         }
-    
-        getResult(selectedOption);
-    }
+
+        // Modify the getResult function to update the response and display "correct" or "wrong"
+        function getResult(element) {
+            const id = parseInt(element.id);
+            if (id === currentQuestion.answer) {
+                element.classList.add("correct");
+                element.classList.remove("wrong");
+                correctAnswers++;
+                updateResponse(questionCounter - 1, true); // Update the user's response
+            } else {
+                element.classList.add("wrong");
+                element.classList.remove("correct");
+                topicList.push(currentQuestion.topic);
+                updateResponse(questionCounter - 1, false); // Update the user's response
+            }
+
+            attempt++;
+            unclickableOptions();
+        }
 
 function changeMind() {
     selectedOption = null, document.querySelectorAll(".option").forEach(e => {
