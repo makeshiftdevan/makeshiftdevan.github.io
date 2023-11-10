@@ -1,39 +1,13 @@
 // Define an array of physics situations as objects
 const physicsSituations = [
-    "An object in free fall near the surface of the Earth",
-    "A car accelerating on a straight road",
-    "A block sliding down an inclined plane",
-    "A simple pendulum in motion",
-    "An object attached to a rotating platform",
-    "A satellite in orbit around a planet",
-    "A rotating wheel with angular momentum",
-    "A ball rolling down a curved track",
-    "A mass attached to a string swinging in a circle",
-    "A roller coaster moving through loops",
-    "A harmonic oscillator (spring-mass system)",
-    "A planet in elliptical orbit around the Sun",
-    "A gyroscope precessing",
-    "A swinging pendulum with varying potential and kinetic energy",
-    "A car moving in a circular path with centripetal force",
-    "A rotating fan blade with angular velocity",
-    "A rocket taking off into space with thrust and work",
-    "A flywheel with rotational kinetic energy",
-    "A frictionless roller coaster on a hill",
-    "A simple harmonic oscillator in motion"
-];
-
-const strategies = [
-    "kinematics",
-    "constant velocity",
-    "forces",
-    "momentum",
-    "angular momentum",
-    "orbital mechanics",
-    "centripetal force",
-    "energy concepts",
-    "torque",
-    "angular kinematics",
-    "logic",
+    {
+        description: "An object in free fall near the surface of the Earth",
+        strategy: "kinematics",
+        diagram: "Free-falling object near the Earth's surface",
+        strategies: ["kinematics", "forces", "energy concepts", "logic"],
+        variables: ["time", "acceleration", "velocity", "distance"],
+    },
+    // ... (other physics situations, make sure to add 30 in total)
 ];
 
 // Initialize game variables
@@ -94,3 +68,5 @@ function generateRandomSituation() {
     const randomIndex = Math.floor(Math.random() * physicsSituations.length);
     return physicsSituations[randomIndex];
 }
+
+// ... (rest of your code)
