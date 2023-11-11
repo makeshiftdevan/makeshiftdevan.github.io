@@ -1,74 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Skanections</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://drive.google.com/uc?export=download&id=1qAoOeymcT1cS8Xx2jx0yLI6O4svJs2aS">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .game-board {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .cell {
-            width: 100px;
-            height: 100px;
-            background-color: rgb(183, 45, 186);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        .cell.correct {
-            background-color: rgb(36, 232, 6);
-        }
-
-        .cell.incorrect {
-            background-color: rgb(224, 33, 75);
-            animation: shake 0.3s ease-in-out infinite;
-        }
-
-        #score {
-            font-size: 20px;
-            margin-top: 20px;
-        }
-
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            50% { transform: translateX(5px); }
-            75% { transform: translateX(-5px); }
-            100% { transform: translateX(5px); }
-        }
-    </style>
-</head>
-
-<body oncopy="return false;" oncut="return false;" onpaste="return false;" oncontextmenu="return false;">
-    <div class="container">
-        <h1>Skanections</h1>
-        <p id="directions">Create 4 groups of 4</p>
-        <div class="game-board">
-            <!-- Grid cells will be dynamically generated here -->
-        </div>
-        <p id="score">Score: 0</p>
-    </div>
-
-    <script>
-        // Define an array of physics situations as objects
+ // Define an array of physics situations as objects
         const physicsSituations = [
             {
                 description: "An object in free fall near the surface of the Earth",
@@ -499,11 +429,47 @@
         strategies: ["kinematics", "forces", "energy concepts"],
         variables: ["time", "velocity", "distance", "acceleration"],
     }
-            // ... (other physics situations, make sure to add 30 in total)
         ];
 
-        // Initialize game variables
-        let points = 0;
+        const optionsForStrategies= [
+  "Kinematics",
+  "Conservation of Energy",
+  "Forces",
+  "Circuits",
+  "Angular Kinematics",
+  "Torque",
+  "Angular Momentum",
+  "Conservation of Momentum",
+  "Orbital Mechanics",
+  "Logic",
+  "Vector Addition",
+  "Work-Energy Theorem",
+  "Fluid Dynamics",
+  "Thermodynamics",
+  "Waves",
+  "Optics",
+  "Special Relativity"
+];
+        var DiagramOptions = [
+  "Force Arrows",
+  "Objects or Bodies",
+  "Acceleration Arrows",
+  "Velocity Vectors",
+  "Displacement Vectors",
+  "Equations",
+  "Coordinate Axes",
+  "Energy Transformations",
+  "Circuit Elements",
+  "Magnetic Field Lines",
+  "Electric Field Lines",
+  "Wave Patterns",
+  "Free-Body Diagrams",
+  "Pulleys and Springs",
+  "Projectile Paths",
+  "Friction Arrows"
+];
+ // Initialize game variables
+ let points = 0;
         let currentGroup = 1; // Current group number
         let correctSelections = 0; // Number of correct selections in the current group
 
@@ -513,10 +479,8 @@
             const directions = document.getElementById("directions");
             directions.textContent = `Group ${currentGroup}: Create 4 groups of 4`;
 
-            // Generate a random physics situation
+            // Generate a random physics situation for the current group
             const randomSituation = generateRandomSituation();
-            const gameBoard = document.querySelector(".game-board");
-            gameBoard.innerHTML = '';
 
             // Shuffle the problem-solving strategies and populate the grid
             const shuffledStrategies = shuffleArray(randomSituation.strategies);
@@ -602,14 +566,6 @@
                 });
             });
         }
- // Function to generate a random physics situation
- function generateRandomSituation() {
-            const randomIndex = Math.floor(Math.random() * physicsSituations.length);
-            return physicsSituations[randomIndex];
-        }
+
         // Start the game by initializing the first group
         startNewGroup();
-    </script>
-</body>
-
-</html>
